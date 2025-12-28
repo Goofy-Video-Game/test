@@ -1,13 +1,14 @@
 import webbrowser
 import time
 
-def PickingABrowser():
+def PickingAWebsite():
     websites = {
         "stackoverflow": "http://stackoverflow.com",
         "glow": "http://glow.rmunify.com",
         "google": "http://google.com",
         "bored button": "http://boredbutton.com"
     }
+
     print("pick a website from the following\nstackoverflow\nglow\ngoogle\nbored button\n")
     while True:
         ChoiceOfWebsite = input("Please enter one of the websites from the list\n").lower()
@@ -31,4 +32,4 @@ def PickingABrowser():
             print("You have Not Selected a valid website. Please try again.\n")
             time.sleep(1)
 
-PickingABrowser()
+PickingAWebsite()
