@@ -1,1 +1,34 @@
-print("hows bro")
+import webbrowser
+import time
+
+def PickingABrowser():
+    websites = {
+        "stackoverflow": "http://stackoverflow.com",
+        "glow": "http://glow.rmunify.com",
+        "google": "http://google.com",
+        "bored button": "http://boredbutton.com"
+    }
+    print("pick a website from the following\nstackoverflow\nglow\ngoogle\nbored button\n")
+    while True:
+        ChoiceOfWebsite = input("Please enter one of the websites from the list\n").lower()
+        print()
+        
+        # opens website + debugging messages
+        if ChoiceOfWebsite in websites:
+            print(f"User selected: {ChoiceOfWebsite}")
+
+            url = websites[ChoiceOfWebsite]
+            print(f"URL to open: {url}")
+            print("Opening website...")
+            time.sleep(1)
+
+            success = webbrowser.open(url)
+            print(f"webbrowser.open() returned: {success}")
+            if not success:
+                print("Failed to open the website. Please check your default browser settings.")
+            break
+        else:
+            print("You have Not Selected a valid website. Please try again.\n")
+            time.sleep(1)
+
+PickingABrowser()
